@@ -61,7 +61,7 @@ export default function AuthForm<T extends FieldValues>({
             name={field as Path<T>}
             render={({ field }) => (
               <FormItem className="flex w-full flex-col gap-2.5">
-                <FormLabel className="paragraph-medium text-dark40_light700">
+                <FormLabel className="paragraph-medium text-dark400_light700">
                   {field.name === "email"
                     ? "Email Address"
                     : field.name.charAt(0).toUpperCase() + field.name.slice(1)}
