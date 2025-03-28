@@ -1,3 +1,4 @@
+import HomeFilter from "@/components/filters/HomeFilter";
 import LocalSearch from "@/components/search/LocalSearch";
 import { Button } from "@/components/ui/button";
 import ROUTES from "@/constants/routes";
@@ -39,7 +40,7 @@ interface SearchParams {
 }
 
 export default async function Home({ searchParams }: SearchParams) {
-  const { query = "" } = await searchParams;
+  const { query = "", filter = "" } = await searchParams;
 
   const filteredQuestions = QUESTIONS.filter((question) =>
     question.title.toLowerCase().includes(query?.toLowerCase())
@@ -65,7 +66,7 @@ export default async function Home({ searchParams }: SearchParams) {
         />
       </section>
 
-      {/* HomeFilter */}
+      <HomeFilter />
 
       <div className="mt-10 flex w-full flex-col gap-6">
         {filteredQuestions.map((question) => (
